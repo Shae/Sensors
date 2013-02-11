@@ -96,8 +96,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 	public void onSensorChanged(SensorEvent event) {
 		if(event.sensor == proximitySensor)
 		{
+			double x = event.values[0];
 			distance.setText("Prox sensors detected");
-			distance.setText(String.valueOf(event.values[0]));
+			//distance.setText(String.valueOf(event.values[0]));
+			if(x == 0.0){
+				distance.setText("CLOSE");
+			}else{
+				distance.setText("FAR");
+			}
 		}
 		
 		else if(event.sensor == geomagneticSensor)
@@ -164,7 +170,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         else
         {
         	sensorManager.registerListener(this, proximitySensor, SensorManager.SENSOR_DELAY_NORMAL);
-        	Log.i("SENSOR", "prox");
+        	Log.i("SENSOR", "prox registered");
         }
         
         ///////////  GEO 
@@ -177,8 +183,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         else
         {
         	sensorManager.registerListener(this, geomagneticSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        	Log.i("SENSOR", "geo");
-        	gm_x.setText("TEST TEST");
+        	Log.i("SENSOR", "geo registered");
         }
         
         ///////////  ACC 
@@ -191,7 +196,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         else
         {
         	sensorManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        	Log.i("SENSOR", "acc");
+        	Log.i("SENSOR", "acc registered");
         }
         
         ///////////  TEMP 
@@ -202,7 +207,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         else
         {
         	sensorManager.registerListener(this, temperatureSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        	Log.i("SENSOR", "temp");
+        	Log.i("SENSOR", "temp registered");
         }
         
         
@@ -214,7 +219,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         else
         {
         	sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        	Log.i("SENSOR", "light");
+        	Log.i("SENSOR", "light registered");
         }
 	}
 	

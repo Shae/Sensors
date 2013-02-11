@@ -6,6 +6,7 @@
 
     
     <!-- PROX -->
+
     <TextView
         android:id="@+id/proxTitle"
         android:layout_width="wrap_content"
@@ -13,21 +14,22 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="38dp"
         android:text="@string/proximity_distance_cm_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
  
         <TextView
-        android:id="@+id/Prox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/proxTitle"
-        android:layout_alignParentRight="true"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="15sp" />
-    
+            android:id="@+id/Prox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/proxTitle"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="15sp" />
     
     <!-- GEO -->
 
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/proxTitle"
+        android:layout_marginLeft="5dp"
         android:text="@string/geomagnetic_x_axis_ut_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -47,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/GeoXtitle"
+        android:layout_marginLeft="5dp"
         android:text="@string/geomagnetic_y_axis_ut_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -58,17 +62,18 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/GeoYtitle"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
         android:text="@string/geomagnetic_z_axis_ut_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
 
-    
     <TextView
         android:id="@+id/GeoX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/GeoXtitle"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -79,11 +84,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/GeoYtitle"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
-    
-    
     
     <!-- ACC -->
 
@@ -93,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/GeoZtitle"
+        android:layout_marginLeft="5dp"
         android:text="@string/accelerometer_x_axis_m_sec2_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -103,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/AccXtitle"
+        android:layout_marginLeft="5dp"
         android:text="@string/accelerometer_y_axis_m_sec2_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -114,14 +120,10 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/AccYtitle"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
         android:text="@string/accelerometer_z_axis_m_sec2_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
-    
-    
-    
-    
-    
     
     <TextView
         android:id="@+id/tempTitle"
@@ -129,6 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/AccZtitle"
+        android:layout_marginLeft="5dp"
         android:text="@string/temperature_deg_c_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -140,6 +143,7 @@
         android:layout_alignBaseline="@+id/tempTitle"
         android:layout_alignBottom="@+id/tempTitle"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -151,6 +155,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tempTitle"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
         android:text="@string/light_lx_"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -161,6 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/AccXtitle"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -171,6 +177,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/AccYtitle"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -182,6 +189,7 @@
         android:layout_alignBaseline="@+id/AccZtitle"
         android:layout_alignBottom="@+id/AccZtitle"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -193,6 +201,7 @@
         android:layout_alignBaseline="@id/GeoZtitle"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/GeoY"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />
@@ -203,6 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Temp"
+        android:layout_marginRight="5dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="15sp" />

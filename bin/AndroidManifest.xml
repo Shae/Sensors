@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
-    	<uses-feature android:name="android.hardware.sensor.accelerometer"
+    	<!-- <uses-feature android:name="android.hardware.sensor.accelerometer"
               android:required="true" /> 
     	<uses-feature android:name="android.hardware.sensor.gyroscope"
               android:required="true" /> 
@@ -16,7 +16,7 @@
     	<uses-feature android:name="android.hardware.sensor.proximity"
               android:required="true" />
     	<uses-feature android:name="android.hardware.sensor.barometer"
-              android:required="true" />  
+              android:required="true" />   -->
               
 
     <application

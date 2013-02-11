@@ -67,6 +67,95 @@ public class MainActivity extends Activity implements SensorEventListener {
         temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         
+        	
+        sensorReg();
+        
+
+             
+        
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    } // END onCreateOptionsMenu
+
+    
+    
+    
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+	} // END onAccuracyChanged
+
+	
+
+	
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		if(event.sensor == proximitySensor)
+		{
+			distance.setText("Prox sensors detected");
+			distance.setText(String.valueOf(event.values[0]));
+		}
+		
+		else if(event.sensor == geomagneticSensor)
+		{
+			double x = Math.round(100*event.values[0])/((double)100);
+			double y = Math.round(100*event.values[1])/((double)100);
+			double z = Math.round(100*event.values[2])/((double)100);
+			
+			gm_x.setText(String.valueOf(x));
+			gm_y.setText(String.valueOf(y));
+			gm_z.setText(String.valueOf(z));
+		}
+		
+		else if(event.sensor == accelerometerSensor)
+		{
+			double x = Math.round(100*event.values[0])/((double)100);
+			double y = Math.round(100*event.values[1])/((double)100);
+			double z = Math.round(100*event.values[2])/((double)100);
+			
+			acc_x.setText(String.valueOf(x));
+			acc_y.setText(String.valueOf(y));
+			acc_z.setText(String.valueOf(z));
+		}
+		
+		else if(event.sensor == temperatureSensor)
+		{
+			temp.setText(String.valueOf(event.values[0]));
+		}
+		
+		else if(event.sensor == lightSensor)
+		{
+			double x = Math.round(100*event.values[0])/((double)100);
+			light.setText(String.valueOf(x));
+		}
+		
+
+		
+	}// END onSensorChanged
+
+	
+	@Override
+	protected void onPause() {
+		
+		super.onPause();
+		sensorManager.unregisterListener(this);
+	}
+
+	
+	
+	@Override
+	protected void onResume() {
+		
+		super.onResume();
+		sensorReg();
+	}
+    
+	
+	private void sensorReg(){
         /////////// PROX
         if (proximitySensor == null)
         {
@@ -127,84 +216,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         	sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
         	Log.i("SENSOR", "light");
         }
-             
-        
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    } // END onCreateOptionsMenu
-
-    
-    
-    
-	@Override
-	public void onAccuracyChanged(Sensor sensor, int accuracy) {
-		
-		
-	} // END onAccuracyChanged
-
-	
-	
-	
-	
-	@Override
-	public void onSensorChanged(SensorEvent event) {
-		if(event.sensor == proximitySensor)
-		{
-			distance.setText(String.valueOf(event.values[0]));
-		}
-		
-		else if(event.sensor == geomagneticSensor)
-		{
-			
-			gm_x.setText(String.valueOf(event.values[0]));
-			gm_y.setText(String.valueOf(event.values[1]));
-			gm_z.setText(String.valueOf(event.values[2]));
-		}
-		
-		else if(event.sensor == accelerometerSensor)
-		{
-			acc_x.setText(String.valueOf(event.values[0]));
-			acc_y.setText(String.valueOf(event.values[1]));
-			acc_z.setText(String.valueOf(event.values[2]));
-		}
-		
-		else if(event.sensor == temperatureSensor)
-		{
-			temp.setText(String.valueOf(event.values[0]));
-		}
-		
-		else if(event.sensor == lightSensor)
-		{
-			light.setText(String.valueOf(event.values[0]));
-		}
-		
-
-		
-	}// END onSensorChanged
-
-	
-	@Override
-	protected void onPause() {
-		
-		super.onPause();
-		sensorManager.registerListener(this, proximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
 	}
-
-	
-	
-	@Override
-	protected void onResume() {
-		
-		super.onResume();
-		sensorManager.unregisterListener(this);
-	}
-    
-	
 	
 	
 	
